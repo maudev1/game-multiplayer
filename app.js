@@ -13,7 +13,7 @@ new Vue({
 
             let ot = new Other(space, 'gray', { x: 20, y: 12 });
 
-            stg.spaw(ot);
+            stg.spaw(ot.get());
 
             let pl = new Pixel(space);
 

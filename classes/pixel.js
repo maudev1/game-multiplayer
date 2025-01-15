@@ -5,6 +5,7 @@ class Pixel {
         var char = new Konva.Group({
             x: space.width / 2,
             y: space.height / 2,
+            draggable: true,
         });
 
         let rect = new Konva.Rect({
@@ -27,12 +28,9 @@ class Pixel {
             strokeWidth: 1
         });
 
-
         char.add(eyes);
 
         this.char = char;
-
-
     }
 
     move(key) {

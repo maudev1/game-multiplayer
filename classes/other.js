@@ -2,18 +2,25 @@ class Other {
 
     constructor(space, color, posix) {
 
-        this.rect = new Konva.Rect({
-            x: space.width / posix.width,
-            y: space.height / posix.height,
+        var char = new Konva.Group({
+            x: space.width / 10,
+            y: space.height / 10,
+            draggable: true,
+        });
+
+        let rect = new Konva.Rect({
             width: 20,
             height: 40,
             fill: color,
             stroke: color,
-            strokeWidth: 1
+            strokeWidth: 1,
+
         });
 
+        char.add(rect);
 
-        return this.rect
+        this.char = char;
+
 
     }
 
@@ -37,6 +44,8 @@ class Other {
 
     }
 
-
+    get(){
+        return this.char;
+    }
 
 }
