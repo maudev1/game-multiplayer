@@ -9,19 +9,21 @@ class Pixel {
 
         this.layer = new Konva.Layer();
 
-        this.circle = new Konva.Circle({
-            x: this.stage.width() - 2,
+        this.size = 1;
+
+        this.rect = new Konva.Rect({
+            x: this.stage.width()  / 2,
             y: this.stage.height() / 2,
-            radius: 1,
-            fill: 'red',
-            stroke: 'black',
+            // radius: this.size,
+
+            width: 20,
+            height: 40,
+            fill:   '#ffdba2',
+            stroke: '#ffdba2',
             strokeWidth: 1
         });
 
-        this.others();
-
-        this.layer.add(this.circle);
-        this.layer.add(this.other);
+        this.layer.add(this.rect);
 
         this.stage.add(this.layer);
         this.layer.draw();
@@ -31,8 +33,8 @@ class Pixel {
     others(){
 
         this.other = new Konva.Circle({
-            x: this.stage.width() - 2,
-            y: this.stage.height() - 2,
+            x: this.stage.width()  / 2,
+            y: this.stage.height() / 2,
             radius: 1,
             fill: 'gray',
             stroke: 'gray',
@@ -42,20 +44,21 @@ class Pixel {
     }
 
     move(key) {
-        var x = this.circle.x();
-        var y = this.circle.y();
+        let fps = 2;
+        var x = this.rect.x();
+        var y = this.rect.y();
 
         if (key === 'ArrowLeft') {
-            this.circle.x(x - 1);
+            this.rect.x(x - fps);
         }
         else if (key === 'ArrowRight') {
-            this.circle.x(x + 1);
+            this.rect.x(x + fps);
         }
         else if (key === 'ArrowUp') {
-            this.circle.y(y - 1);
+            this.rect.y(y - fps);
         }
         else if (key === 'ArrowDown') {
-            this.circle.y(y + 1);
+            this.rect.y(y + fps);
         }
 
         this.pac();
@@ -65,18 +68,22 @@ class Pixel {
 
     pac(){
 
-        let circle = this.circle
-        let other  = this.other
+        // let circle = this.circle
+        // let other  = this.other
 
-        if(circle.x() == other.x()){
+        // if(circle.x() == other.x()){
 
-            if(circle.y() == other.y()){
+        //     if(circle.y() == other.y()){
 
-                this.circle.strokeWidth(5)
+        //         this.size = this.size + 1;
 
-            }
+        //         this.circle.radius = this.size;
 
-        }
+        //         // console.log(this.size)
+
+        //     }
+
+        // }
     }
 
 

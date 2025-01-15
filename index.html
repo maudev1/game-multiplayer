@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -7,28 +7,22 @@
     <title>Document</title>
 
     <script src="https://unpkg.com/konva@9/konva.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 </head>
 
 
 <body>
 
-    <div id="container"></div>
-    <script src="script.js"></script>
-    <script>
+    <div id="app">
+        <h2>{{ name }}</h2>
 
-        let gt = new Pixel();
+        <div id="container"></div>
 
-        document.addEventListener('keydown', function (e) {
-            var key = e.key;
+    </div>
 
-            gt.move(key)
-
-
-        });
-
-
-
-    </script>
+    <script src="classes/stage.js"></script>
+    <script src="classes/pixel.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
