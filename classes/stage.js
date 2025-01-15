@@ -13,7 +13,7 @@ class Stage {
 
     }
 
-    spaw(object){
+    spaw(object) {
 
         this.layer.add(object);
         this.stage.add(this.layer);
@@ -21,14 +21,14 @@ class Stage {
 
     }
 
-    getSize(){
+    getSize() {
         return {
             width: this.stage.width(),
             height: this.stage.height()
         }
     }
 
-    update(){
+    update() {
         this.layer.batchDraw();
     }
 

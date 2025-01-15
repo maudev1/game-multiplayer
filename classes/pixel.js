@@ -1,19 +1,17 @@
-class Pixel extends Stage{
+class Pixel {
 
-    constructor() {
-
-        super();
+    constructor(space) {
 
         var char = new Konva.Group({
-            x: super.getSize().width  / 2,
-            y: super.getSize().height / 2,
+            x: space.width / 2,
+            y: space.height / 2,
         });
 
         let rect = new Konva.Rect({
             width: 20,
             height: 40,
-            fill:   '#ffdba2',
-            stroke: '#ffdba2',
+            fill: '#8e908c',
+            stroke: '#8e908c',
             strokeWidth: 1
         });
 
@@ -24,17 +22,16 @@ class Pixel extends Stage{
             y: 4,
             width: 4,
             height: 1,
-            fill:   'black',
+            fill: 'black',
             stroke: 'black',
             strokeWidth: 1
         });
 
-      
+
         char.add(eyes);
 
         this.char = char;
 
-        super.spaw(this.char)
 
     }
 
@@ -56,11 +53,11 @@ class Pixel extends Stage{
             this.char.y(y + frames);
         }
 
-        super.update();
-
     }
 
-    
+    get() {
+        return this.char;
+    }
 
 
 

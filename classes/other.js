@@ -1,21 +1,19 @@
-class Other extends Stage{
+class Other {
 
-    constructor(color, posix) {
-
-        super();
+    constructor(space, color, posix) {
 
         this.rect = new Konva.Rect({
-            x: super.getSize.width  / posix.width,
-            y: super.getSize.height / posix.height,
+            x: space.width / posix.width,
+            y: space.height / posix.height,
             width: 20,
             height: 40,
-            fill:   color,
+            fill: color,
             stroke: color,
             strokeWidth: 1
         });
 
-    
-        super.spaw(this.rect)
+
+        return this.rect
 
     }
 

@@ -8,12 +8,21 @@ new Vue({
     methods: {
         applicationStart() {
 
-            let gt = new Pixel();
+            let stg = new Stage();
+            let space = {width: stg.getSize().width,height: stg.getSize().height}
+
+            let ot = new Other(space, 'gray', { x: 20, y: 12 });
+
+            stg.spaw(ot);
+
+            let pl = new Pixel(space);
+
+            stg.spaw(pl.get());
 
             document.addEventListener('keydown', function (e) {
                 var key = e.key;
-
-                gt.move(key)
+                pl.move(key);
+                stg.update();
 
             });
 
